@@ -1,0 +1,72 @@
+/*------------------------------------
+  Go To v1
+------------------------------------*/
+$g-color-white: #fff;
+$g-color-main: #555;
+$g-color-black: #000;
+$g-color-primary: #72c02c;
+$g-sm: 576px !default;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.go-to {
+  display: block;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  animation: fadeOut 0.5s;
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+    animation: fadeIn 0.5s;
+  }
+
+  button {
+    width: 3.57143rem;
+    height: 3.57143rem;
+
+    background-color: rgba($g-color-white, .7);
+    color: $g-color-main;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 0 rgba($g-color-black, .15) !important;
+    transition: .3s ease-out;
+    z-index: 11;
+    border: 0 !important;
+
+    &:hover,
+    &:focus:hover {
+      text-decoration: none;
+      color: $g-color-white;
+      background-color: $g-color-primary;
+    }
+
+    &:focus,
+    &:active {
+      text-decoration: none;
+      color: $g-color-main !important;
+      background-color: rgba($g-color-white, .7) !important;
+    }
+  }
+}
+
+@media (max-width: #{$g-sm}-1) {
+  .go-to {
+    transform: scale(.8, .8);
+  }
+}
